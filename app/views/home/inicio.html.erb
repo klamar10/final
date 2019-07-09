@@ -4,38 +4,21 @@
   flex-direction: row;
   min-height:100%;
 }
+.boton{
+ margin: 200px 0px 200px 200px;
+}
 </style>
 <div class="contenedor">
 		<br>
-		<img src="assets/inicio1" width="580px" height="530px" style="margin: 10px 0px 0px 20px">
-	<body style="background-color:#F5F5F5;">
+		<img src="assets/inicio1" width="600px" height="530px" style="margin: 10px 0px 0px 20px">
+	<body style="background-color:#011f4b">
+
 </body>
-<div style="margin: 100px 0px 0px 280px;">
-
-<select name="OS" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="margin: 20px;">
-<option selected value="0"> Proyecto </option>
-       <optgroup label="Distritos"> 
-       <option value="1">Miraflores</option> 
-       <option value="2">Barranco</option> 
-       <option value="3">Surco</option> 
-   </optgroup> 
-</select>
-
-<br>
-
-<select name="OS" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="margin: 10px 0px 20px 50px;">
-<option selected value="0"> Piso</option>
-       <optgroup label="Distritos"> 
-       <option value="1">1</option> 
-       <option value="2">2</option> 
-       <option value="3">3</option> 
-   </optgroup> 
-</select>
-<br>
-<div style="margin: 10px -10px 0px 50px;">
-
-<%= link_to "Consultar", :class => "btn btn-outline-dark"%> 
+<form>
+  <div class="boton">
+ <input name="q" class="form-control"<%= @q %> >
+ <br>
+ <button type="submit" class=" btn btn-outline-danger" style="margin: 0px 0px 0px 60px">Buscar</button>
+</form>
 </div>
-</div>
-
 </div>

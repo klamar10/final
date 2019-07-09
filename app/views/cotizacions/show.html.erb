@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Comentarios:</strong>
+  <%= @cotizacion.comentarios %>
+</p>
+
+<p>
+  <strong>Departamento:</strong>
+  <%= @cotizacion.departamento %>
+</p>
+
+<%= link_to 'Edit', edit_cotizacion_path(@cotizacion) %> |
+<%= link_to 'Back', cotizacions_path %>

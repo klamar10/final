@@ -8,4 +8,7 @@ class Departamento < ApplicationRecord
   validates :tipo, presence: true
   validates :precio, presence: true
   validates :proyecto, presence: true
+  def to_s
+		nombre
+	end
 end

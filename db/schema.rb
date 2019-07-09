@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190709054348) do
+ActiveRecord::Schema.define(version: 20190709055538) do
+
+  create_table "cotizacions", force: :cascade do |t|
+    t.text "comentarios"
+    t.integer "departamento_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["departamento_id"], name: "index_cotizacions_on_departamento_id"
+  end
 
   create_table "departamentos", force: :cascade do |t|
     t.integer "piso"

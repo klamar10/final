@@ -1,0 +1,27 @@
+<%= form_with(model: cotizacion, local: true) do |form| %>
+  <% if cotizacion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cotizacion.errors.count, "error") %> prohibited this cotizacion from being saved:</h2>
+
+      <ul>
+      <% cotizacion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :comentarios %>
+    <%= form.text_area :comentarios, id: :cotizacion_comentarios %>
+  </div>
+
+  <div class="field">
+    <%= form.label :departamento_id %>
+    <%= form.text_field :departamento_id, id: :cotizacion_departamento_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
