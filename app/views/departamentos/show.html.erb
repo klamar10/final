@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<br>
+<table class="table">
+  <thead class="thead-dark" >
+    <tr style="text-align: center;">
+
+      <td>Pisdsaso</td>
+      <td>Numero</td>
+      <td>Estado</td>
+      <td>Area</td>
+      <td>Tipo</td>
+      <td>Precio</td>
+      <td>Proyecto</td>
+    </tr>
+    
+    <tbody>
+      <tr style="text-align: center;">
+        <td><%= @departamento.piso %></td>
+        <td><%= @departamento.numero %></td>
+        <td><%= @departamento.estado %></td>
+        <td><%= @departamento.area %></td>
+        <td><%= @departamento.tipo %></td>
+        <td><%= @departamento.precio %></td>
+        <td><%= @departamento.proyecto %></td>
+      </tr>
+    </tbody>
+  </thead>
+</table>
+
+
+
+<div style="text-align: center;">
+<%= link_to 'Editar', edit_departamento_path(@departamento), class: "btn btn-outline-primary" %> |
+<%= link_to 'Atras', departamentos_path, class: "btn btn-outline-danger" %>
+</div>

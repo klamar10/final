@@ -1,0 +1,47 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="col-md-6">
+  <div class="field ">
+    <%= form.label "Nombre"%>
+    <%= form.text_area :nombre, id: :user_nombre, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Correo electronico" %>
+    <%= form.text_field :email, id: :user_email, class: 'form-control'%>
+  </div>
+
+  <div class="field">
+    <%= form.label "Contraseña" %>
+    <%= form.text_field :password, id: :user_password, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Celular" %>
+    <%= form.number_field :celular, id: :user_celular, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Dni" %>
+    <%= form.number_field :dni, id: :user_dni, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Direccion" %>
+    <%= form.text_area :direccion, id: :user_direccion, class: 'form-control' %>
+  </div>
+<br>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

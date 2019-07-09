@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<table class="table">
+  <thead>
+<tr style="text-align: center;"> 
+  <td>Nombre</td>
+  <td>Caracteristica</td>
+  <td>Areacomun</td>
+  <td>Pisos</td>
+  <td>Ubicacion</td>
+  <td>Precio</td>
+</tr>
+<tbody>
+  <tr style="text-align: center;">
+    <td><%= @proyecto.nombre %></td>
+  <td><%= @proyecto.caracteristica %>
+<td><%= @proyecto.areacomun %></td>
+<td><%= @proyecto.pisos %></td>
+<td><%= @proyecto.ubicacion %></td>
+<td><%= @proyecto.precio %></td>
+  </tr>
+</tbody>
+</thead>
+
+</table>
+<div style="text-align: center;">
+<%= link_to 'Editar', edit_proyecto_path(@proyecto), class: "btn btn-outline-primary" %> |
+<%= link_to 'Atras', proyectos_path, class: "btn btn-outline-danger" %>
+</div>

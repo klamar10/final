@@ -1,0 +1,49 @@
+<%= form_with(model: proyecto, local: true) do |form| %>
+  <% if proyecto.errors.any? %>
+    <div id="error_explanation" style="margin: 0px 0px 0px 10px">
+      <h2 style="color: red; size: 1;" >Solucionar:</h2>
+
+      <ul>
+      <% proyecto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="col-md-6 col-md-offset-3" style="margin: 1px 0px 0px 50px;">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :proyecto_nombre, class: 'form-control'%>
+  </div>
+
+  <div class="col-md-6 col-md-offset-3" style="margin: 1px 0px 0px 50px;">
+    <%= form.label :Caracteristicas %>
+    <%= form.text_field :caracteristica, id: :proyecto_caracteristica, class: 'form-control' %>
+  </div>
+
+  <div class="col-md-6 col-md-offset-3" style="margin: 1px 0px 0px 50px;">
+    <%= form.label "Areas Comunes" %>
+    <%= form.text_area :areacomun, id: :proyecto_areacomun, class: 'form-control' %>
+  </div>
+
+  <div class="col-md-6 col-md-offset-3" style="margin: 1px 0px 0px 50px;">
+    <%= form.label "Numero Pisos" %>
+    <%= form.number_field :pisos, id: :proyecto_pisos, class: 'form-control' %>
+  </div>
+
+  <div class="col-md-6 col-md-offset-3" style="margin: 1px 0px 0px 50px;">
+    <%= form.label :ubicacion %>
+    <%= form.text_area :ubicacion, id: :proyecto_ubicacion, class: 'form-control' %>
+  </div>
+
+  <div class="col-md-6 col-md-offset-3" style="margin: 1px 0px 0px 50px;">
+    <%= form.label :precio %>
+    <%= form.number_field :precio, id: :proyecto_precio, class: 'form-control' %>
+  </div>
+<br>
+  <div  style="margin: 0px 0px 0px 70px">
+    <%= form.submit %>
+  </div>
+<% end %>
+<br>
+

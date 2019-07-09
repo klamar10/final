@@ -1,0 +1,41 @@
+<style type="text/css">
+	.contenedor {
+  display:flex;
+  flex-direction: row;
+  min-height:100%;
+}
+</style>
+<div class="contenedor">
+		<br>
+		<img src="assets/inicio1" width="580px" height="530px" style="margin: 10px 0px 0px 20px">
+	<body style="background-color:#F5F5F5;">
+</body>
+<div style="margin: 100px 0px 0px 280px;">
+
+<select name="OS" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="margin: 20px;">
+<option selected value="0"> Proyecto </option>
+       <optgroup label="Distritos"> 
+       <option value="1">Miraflores</option> 
+       <option value="2">Barranco</option> 
+       <option value="3">Surco</option> 
+   </optgroup> 
+</select>
+
+<br>
+
+<select name="OS" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="margin: 10px 0px 20px 50px;">
+<option selected value="0"> Piso</option>
+       <optgroup label="Distritos"> 
+       <option value="1">1</option> 
+       <option value="2">2</option> 
+       <option value="3">3</option> 
+   </optgroup> 
+</select>
+<br>
+<div style="margin: 10px -10px 0px 50px;">
+
+<%= link_to "Consultar", :class => "btn btn-outline-dark"%> 
+</div>
+</div>
+
+</div>

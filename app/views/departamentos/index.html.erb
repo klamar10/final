@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<div style="text-align: center;">
+<h1>Departamentos</h1>
+</div>
+<table class="table">
+  <thead style="text-align: center;">
+    <tr>
+      <th>Piso</th>
+      <th>Numero</th>
+      <th>Estado</th>
+      <th>Area</th>
+      <th>Tipo</th>
+      <th>Precio</th>
+      <th>Proyecto</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody style="text-align: center;">
+    <% @departamentos.each do |departamento| %>
+      <tr>
+        <td><%= departamento.piso %></td>
+        <td><%= departamento.numero %></td>
+        <td><%= departamento.estado %></td>
+        <td><%= departamento.area %></td>
+        <td><%= departamento.tipo %></td>
+        <td><%= departamento.precio %></td>
+        <td><%= departamento.proyecto %></td>
+        <!--<td><%= link_to 'Show', departamento %></td>-->
+        <td><%= link_to 'Editar', edit_departamento_path(departamento), class: "btn btn-outline-success" %></td>
+        <td><%= link_to 'Eliminar', departamento, class: "btn btn-outline-danger", method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<div style="text-align: center;">
+<%= link_to 'Nuevo departamento', new_departamento_path, class: "btn btn-outline-success" %>
+</div>
