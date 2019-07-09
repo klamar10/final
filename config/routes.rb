@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  resources :users
+  get 'sessions/new'
+
 root to: 'home#inicio'
   resources :departamentos
   resources :proyectos
-  resources :users
 
   get 'extra/cotizacion'
   get 'datos/personales'

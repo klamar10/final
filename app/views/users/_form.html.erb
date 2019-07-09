@@ -10,37 +10,47 @@
       </ul>
     </div>
   <% end %>
-<div class="col-md-6">
-  <div class="field ">
-    <%= form.label "Nombre"%>
-    <%= form.text_area :nombre, id: :user_nombre, class: 'form-control' %>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :user_nombre %>
   </div>
 
   <div class="field">
-    <%= form.label "Correo electronico" %>
-    <%= form.text_field :email, id: :user_email, class: 'form-control'%>
+    <%= form.label :apellido %>
+    <%= form.text_field :apellido, id: :user_apellido %>
   </div>
 
   <div class="field">
-    <%= form.label "Contraseña" %>
-    <%= form.text_field :password, id: :user_password, class: 'form-control' %>
+    <%= form.label :email %>
+    <%= form.text_area :email, id: :user_email %>
   </div>
 
   <div class="field">
-    <%= form.label "Celular" %>
-    <%= form.number_field :celular, id: :user_celular, class: 'form-control' %>
+    <%= form.label :password %>
+    <%= form.text_area :password, id: :user_password %>
   </div>
 
   <div class="field">
-    <%= form.label "Dni" %>
-    <%= form.number_field :dni, id: :user_dni, class: 'form-control' %>
+    <%= form.label :celular %>
+    <%= form.number_field :celular, id: :user_celular %>
   </div>
 
   <div class="field">
-    <%= form.label "Direccion" %>
-    <%= form.text_area :direccion, id: :user_direccion, class: 'form-control' %>
+    <%= form.label :dni %>
+    <%= form.number_field :dni, id: :user_dni %>
   </div>
-<br>
+
+  <div class="field">
+    <%= form.label :direccion %>
+    <%= form.text_area :direccion, id: :user_direccion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :perfil %>
+    <%= form.text_field :perfil, id: :user_perfil %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

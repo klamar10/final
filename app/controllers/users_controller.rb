@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
+
   # GET /users/1
   # GET /users/1.json
   def show
@@ -27,7 +28,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'Usuario registrado correctamente' }
+        format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -41,7 +42,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'Usuario actualizado correctamente' }
+        format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -68,6 +69,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:nombre, :email, :password, :celular, :dni, :direccion)
+      params.require(:user).permit(:nombre, :apellido, :email, :password, :celular, :dni, :direccion, :perfil)
     end
 end

@@ -34,7 +34,7 @@
                                 </a>
                                 <div class="dropdown-menu">
 
-                                    <%= link_to "Datos Personales",{ :controller => "datos", :action => "personales"}, :class => "dropdown-item"%> 
+                                    <%= link_to "Departamentos",{ :controller => "datos", :action => "personales"}, :class => "dropdown-item"%> 
                                     <%= link_to "Mis cotizaciones",{ :controller => "extra", :action => "cotizacion"}, :class => "dropdown-item" %>
                                  </div> 
                                 </li>
@@ -66,7 +66,7 @@
                   </a>
                   <div class="dropdown-menu">
 
-                      <%= link_to "Datos Personales",{ :controller => "datos", :action => "personales"}, :class => "dropdown-item"%> 
+                      <%= link_to "Departamentos",{ :controller => "datos", :action => "personales"}, :class => "dropdown-item"%> 
                       <%= link_to "Mis cotizaciones",{ :controller => "extra", :action => "cotizacion"}, :class => "dropdown-item" %>
                    </div> 
                   </li>
@@ -78,7 +78,7 @@
       <div style="margin: 0px 0px 0px 300px;">
         <a><span class="glyphicon glyphicon-user" > <%= current_user.nombre %></span></a>
       <%= link_to logout_path, method: :delete do %>
-      <span class='glyphicon glyphicon-log-in'> Salir</span>
+      <span class='glyphicon glyphicon-log-in'> Cerrar sesion</span>
       <% end %>
   <% else %>
         <a href="<%= login_path %>"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a>

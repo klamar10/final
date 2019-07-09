@@ -1,3 +1,18 @@
-<% @adrian.each do |a| %>
-<%= a.nombre %>
-<% end %>
+<table class="table">
+
+
+  <tbody style="text-align: center;">
+    <% @depart.each do |depart| %>
+      <tr>
+        <td><%= depart.piso %></td>
+        <td><%= depart.numero %></td>
+        <td><%= depart.estado %></td>
+        <td><%= depart.area %></td>
+        <td><%= depart.tipo %></td>
+        <td><%= depart.precio %></td>
+        <td><%= depart.proyecto %></td>
+     
+      </tr>
+    <% end %>
+  </tbody>
+</table>

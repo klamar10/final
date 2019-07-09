@@ -1,17 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  nombre: MyText
-  email: MyString
-  password: MyString
+  nombre: MyString
+  apellido: MyString
+  email: MyText
+  password: MyText
   celular: 1
   dni: 1
   direccion: MyText
+  perfil: MyString
 
 two:
-  nombre: MyText
-  email: MyString
-  password: MyString
+  nombre: MyString
+  apellido: MyString
+  email: MyText
+  password: MyText
   celular: 1
   dni: 1
   direccion: MyText
+  perfil: MyString
