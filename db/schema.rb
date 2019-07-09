@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190709050356) do
+ActiveRecord::Schema.define(version: 20190709054348) do
 
   create_table "departamentos", force: :cascade do |t|
     t.integer "piso"
@@ -37,12 +37,14 @@ ActiveRecord::Schema.define(version: 20190709050356) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.text "nombre"
-    t.string "email"
-    t.string "password"
+    t.string "nombre"
+    t.string "apellido"
+    t.text "email"
+    t.text "password"
     t.integer "celular"
     t.integer "dni"
     t.text "direccion"
+    t.string "perfil"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
