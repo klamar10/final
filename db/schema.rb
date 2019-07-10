@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190709055538) do
+ActiveRecord::Schema.define(version: 20190709073902) do
 
   create_table "cotizacions", force: :cascade do |t|
     t.text "comentarios"
@@ -42,6 +42,10 @@ ActiveRecord::Schema.define(version: 20190709055538) do
     t.integer "precio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "foto_file_name"
+    t.string "foto_content_type"
+    t.bigint "foto_file_size"
+    t.datetime "foto_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
