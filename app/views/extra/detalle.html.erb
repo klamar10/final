@@ -1,0 +1,22 @@
+<% @detalle.each do |detalle| %>
+<h1 style="text-align: center;"><%= detalle.proyecto %></h1>
+<table class="table" style="text-align: center;">
+	<thead>
+		<tr>
+		<th>Precio</th>
+		<th>Estado</th>
+		<th>Tipo</th>
+</tr>
+	</thead>
+	<tbody>
+		<tr>
+		<td>Soles: <%= detalle.precio %></td>
+		<td><%= detalle.estado %></td>
+		<td><%= detalle.tipo %></td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+<% end %>

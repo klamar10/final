@@ -1,2 +1,19 @@
-<h1>Extra#cotizacion</h1>
-<p>Find me in app/views/extra/cotizacion.html.erb</p>
+<table class="table" style="text-align: center;">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Opciones</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @coti.each do |coti| %>
+      <tr>
+        <td><%= coti.nombre %> | <%= coti.precio %> </td>
+        <td><%= link_to "Detalles", controller: "extra", action: "detalle"%></td>      
+
+
+      </tr><% end %>
+    </tbody>
+  </table>
