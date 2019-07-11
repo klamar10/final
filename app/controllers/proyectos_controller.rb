@@ -69,7 +69,7 @@ class ProyectosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def proyecto_params
-      params.require(:proyecto).permit(:nombre, :caracteristica, :areacomun, :pisos, :ubicacion, :precio, 
+      params.require(:proyecto).permit(:nombre, :caracteristica, :areacomun, :pisos, :ubicacion, :precio, :foto,
         departamentos_attributes: [:id, :numero, :_destroy])
     end
 end

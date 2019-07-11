@@ -40,6 +40,11 @@
     <%= form.label :precio %>
     <%= form.number_field :precio, id: :proyecto_precio, class: 'form-control' %>
   </div>
+
+  <div class="field">
+    Imagen: <%= form.file_field :foto %>
+  </div>
+
 <br>
   <div  style="margin: 0px 0px 0px 70px">
     <%= form.submit %>
