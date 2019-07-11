@@ -15,18 +15,89 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-    logged in as <strong><%= current_user.email %> </strong>
-      <%= link_to "cerrar sesion", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
-<% else %>
-<%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
-<% end %>
-    <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-  	<div class="content" >
-     <% flash.each do |message_type, message| %>
-          <div class="alert alert-<%= message_type %>"><%= message %></div>
-        <% end %>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand -->
+ <li class="nav-item active">    
+                    <%= link_to "Constructora JyJ", root_path, :class => "navbar-brand" %></li> 
+                      <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <%= link_to "Nosotros", { :controller => "menu", :action => "nosotros" }, :class => "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Servicio", { :controller => "menu", :action => "servicio" }, :class => "nav-link" %>
+    </li>
+
+    <!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Mundo J & J
+      </a>
+      <div class="dropdown-menu">
+        <%= link_to "Departamentos",{ :controller => "datos", :action => "personales"}, :class => "dropdown-item"%> 
+                                    <%= link_to "Mis cotizaciones",{ :controller => "cotizacions", :action => "index"}, :class => "dropdown-item" %>
+        
+      </div>
+    </li>
+
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Mantenimientos
+      </a>
+      <div class="dropdown-menu">
+        <%= link_to "Proyectos",{ :controller => "proyectos"}, :class => "dropdown-item"%> 
+              <%= link_to "Departamentos",{ :controller => "departamentos"}, :class => "dropdown-item" %>
+              <%= link_to "Usuarios" , { :controller => "users"}, :class => "dropdown-item" %>
+              <%= link_to "Datos personales" , { :controller => "users", :action => "index"}, :class => "dropdown-item" %>
+      </div>
+    </li>
+    
+    <div style="margin: 10px 0px -50px 300px;"> 
+
+
+            <% if user_signed_in? %>
+                      <%= link_to "cerrar sesion", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
+            <% else %>
+            <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
+            <% end %>
+                <p class="notice"><%= notice %></p>
+                   <p class="alert"><%= alert %></p>
+                <div class="content" >
+                 <% flash.each do |message_type, message| %>
+                      <div class="alert alert-<%= message_type %>"><%= message %></div>
+           <% end %>
+    </div>
+  </div>
+
+  </ul>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>s
 
     <%= yield %>
     </div>
