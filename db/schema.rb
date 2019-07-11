@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190710180905) do
+ActiveRecord::Schema.define(version: 20190711022613) do
 
   create_table "cotizacions", force: :cascade do |t|
     t.text "comentarios"
@@ -54,6 +54,13 @@ ActiveRecord::Schema.define(version: 20190710180905) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "name"
+    t.string "apellido"
+    t.datetime "cumple"
+    t.boolean "is_female", default: false
+    t.integer "celular"
+    t.integer "dni"
+    t.text "direccion"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
