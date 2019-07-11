@@ -4,8 +4,9 @@
     <title>Constructora</title>
    <%= csrf_meta_tags %>
 
-
-
+  <%= stylesheet_link_tag    "application", media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track': 'reload' %>
+    
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -24,7 +25,29 @@
       <% if user_signed_in? %>
       <li>
         <%= link_to "cerrar sesion" %> 
-      </li>
+      </li>   
+<% if user_signed_in? %>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="collapse navbar-collapse" id="navbarText">
+     <ul class="navbar-nav">
+       <li class="nav-item">
+          <%= link_to "cerrar sesion" %>
+        </li>
+        </div> 
+     </ul>   
+  </nav>
+<%else %>
+   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <ul class="navbar-nav">
+        <li class="nav-item nav-link">
+         <a class="nav-link"> <%= link_to "inicio", root_path%></a>
+        </li>
+          <%= link_to "Proyectos", controller: "extra", action: "cotizacion"%>
+          <%= link_to "Crear cuenta", new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Iniciar sesion", new_user_session_path, :class => ''  %>
+        </li>
+      </ul>
+    </nav>
       <% end %>
     </ul>
   </nav>
@@ -33,8 +56,6 @@
                    <p class="alert"><%= alert %></p>
               
         <div class="content" >
-
-
     <%= yield %>
   </div>
   </body>

@@ -4,9 +4,7 @@ class HomeController < ApplicationController
   if 
 @q    
 @posts = Departamento.where(:tipo => @q)
-redirect_to :departamentos
   else
-    
 @posts = Departamento.all
    end
 end

@@ -9,6 +9,8 @@ root to: 'home#inicio'
   resources :proyectos
 
   get 'extra/cotizacion'
+  get 'extra/detalle'
+
   get 'datos/personales'
   get 'sessions/new'
   get 'menu/servicio'
