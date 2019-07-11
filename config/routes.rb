@@ -14,7 +14,7 @@ root to: 'home#inicio'
   get 'menu/servicio'
   get 'menu/nosotros'
   get 'departamentos/prueba'
-
+  get 'home/inicio'
 
 get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
