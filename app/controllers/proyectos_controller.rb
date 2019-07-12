@@ -14,16 +14,20 @@ class ProyectosController < ApplicationController
 
   # GET /proyectos/new
   def new
+    @months = ["Miraflores", "Barranco", "Surco" ]
     @proyecto = Proyecto.new
   end
 
   # GET /proyectos/1/edit
   def edit
+    @months = ["Miraflores", "Barranco", "Surco" ]
   end
 
   # POST /proyectos
   # POST /proyectos.json
   def create
+    puts proyecto_params
+    puts '---------'
     @proyecto = Proyecto.new(proyecto_params)
 
     respond_to do |format|
@@ -69,7 +73,6 @@ class ProyectosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def proyecto_params
-      params.require(:proyecto).permit(:nombre, :caracteristica, :areacomun, :pisos, :ubicacion, :precio, :foto,
-        departamentos_attributes: [:id, :numero, :_destroy])
+      params.require(:proyecto).permit(:nombre, :caracteristica, :areacomun, :pisos, :ubicacion, :precio, :foto_file_name,)
     end
 end

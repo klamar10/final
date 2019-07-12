@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pruebas
   devise_for :users
   resources :cotizacions
   resources :users

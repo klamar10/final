@@ -6,9 +6,7 @@ class Proyecto < ApplicationRecord
 	validates :areacomun, presence: true
 	validates :ubicacion, presence: true
 	validates :precio, presence: true
-
-	has_attached_file :foto, styles: {medium: "1280x720", thumb: "800x600"}
-	#validates_attachement_content_type :foto, content_type: /\Aimage\/.*\Z/
+	validates :foto_file_name, presence: true
 
 	def to_s
 		nombre

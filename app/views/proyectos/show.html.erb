@@ -18,9 +18,7 @@
 <td><%= @proyecto.pisos %></td>
 <td><%= @proyecto.ubicacion %></td>
 <td><%= @proyecto.precio %></td>
-<td><div class="field">
-  <%= image_tag @proyecto.foto.url() %>
-</div>
+<td><%= @proyecto.foto_file_name %>
 </td>
   </tr>
 </tbody>
