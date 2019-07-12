@@ -1,16 +1,11 @@
 <%= form_with(model: user, local: true) do |form| %>
   <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+  
+    <div class="alert alert-danger">
+    <h4 class="alert-heading"></h4>
+    <span>Completar los campos resaltados</span>
+  </div>
   <% end %>
-
   <div class="field">
     <%= form.label "Nombre" %>
     <%= form.text_field :nombre, id: :user_nombre, class: "form-control", placeholder:"Nombres"%>
@@ -27,7 +22,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :password %>
+    <%= form.label "Contraseña" %>
     <%= form.text_field :password, id: :user_password, class: "form-control", placeholder: "Contraseña" %>
   </div>
 
@@ -46,12 +41,8 @@
     <%= form.text_area :direccion, id: :user_direccion, class: "form-control", placeholder:"Direccion o distrito" %>
   </div>
 
-  <div class="field">
-    <%= form.label :perfil %>
-    <%= form.text_field :perfil, id: :user_perfil, class: "form-control", placeholder:"Perfil" %>
-  </div>
-
   <div class="actions">
     <%= form.submit %>
   </div>
+
 <% end %>

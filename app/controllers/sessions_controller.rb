@@ -7,7 +7,7 @@ def create
     user = User.find_by(email: params[:session][:email].downcase, password: params[:session][:password])
     if user
       log_in user
-      redirect_to :root
+      redirect_to :controller => 'home', :action => 'inicio'
     else
       flash[:danger] = 'Correo o contraseña invalidos'
       render 'new'

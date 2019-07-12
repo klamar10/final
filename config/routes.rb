@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   get 'search/create'
 
-  root to: 'home#inicio'
+  get 'home/inicio'
   resources :users
   resources :pruebas
   resources :cotizacions
   resources :departamentos
   resources :proyectos
   
-  get 'sessions/new'
+  root to: 'sessions#new'
   get 'extra/cotizacion'
   get 'extra/detalle'
 

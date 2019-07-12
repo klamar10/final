@@ -9,7 +9,9 @@
         <td>Celular</td>
         <td>DNI</td>
         <td>Direccion</td>
+        <% if logged_in? and current_user.perfil=="Administrador" %>
         <td>Perfil</td>
+        <% end%>
       </tr>
     </thead>
     <tbody>
