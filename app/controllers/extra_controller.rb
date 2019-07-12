@@ -3,6 +3,7 @@ class ExtraController < ApplicationController
   	@coti = Proyecto.all
   end
   def detalle
+    @proyectos = Proyecto.all
   	@detalle = Departamento.where(:tipo => "flat")
   end
    private

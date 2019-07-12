@@ -8,7 +8,5 @@ class Proyecto < ApplicationRecord
 	validates :precio, presence: true
 	validates :foto_file_name, presence: true
 
-	def to_s
-		nombre
-	end
+	
 end
