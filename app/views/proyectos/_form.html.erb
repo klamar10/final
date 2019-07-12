@@ -13,35 +13,34 @@
 
 <div class="col-md-6 col-md-offset-3" style="margin: 1px 0px 0px 50px;">
   <%= form.label :nombre %>
-  <%= form.text_field :nombre, id: :proyecto_nombre, class: 'form-control'%>
+  <%= form.text_field :nombre, id: :proyecto_nombre, class: 'form-control', placeholder:"Nombre"%>
 </div>
 
 <div class="col-md-6 col-md-offset-3" style="margin: 1px 0px 0px 50px;">
   <%= form.label :Caracteristicas %>
-  <%= form.text_field :caracteristica, id: :proyecto_caracteristica, class: 'form-control' %>
+  <%= form.text_area :caracteristica, id: :proyecto_caracteristica, class: 'form-control', placeholder:"Caracteristicas del proyecto" %>
 </div>
 
 <div class="col-md-6 col-md-offset-3" style="margin: 1px 0px 0px 50px;">
   <%= form.label "Areas Comunes" %>
-  <%= form.text_area :areacomun, id: :proyecto_areacomun, class: 'form-control' %>
+  <%= form.text_area :areacomun, id: :proyecto_areacomun, class: 'form-control', placeholder:"Areas comunes" %>
 </div>
 
 <div class="col-md-6 col-md-offset-3" style="margin: 1px 0px 0px 50px;">
   <%= form.label "Numero Pisos" %>
-  <%= form.number_field :pisos, id: :proyecto_pisos, class: 'form-control' %>
+  <%= form.number_field :pisos, id: :proyecto_pisos, class: 'form-control', placeholder:"Catidad de pisos" %>
 </div>
 
 <div class="col-md-6 col-md-offset-3" style="margin: 1px 0px 0px 50px;">
   <%= form.label :ubicacion %>
-  <%= form.text_area :ubicacion, id: :proyecto_ubicacion, class: 'form-control' %>
-</div>
+  <%= form.text_area :ubicacion, id: :proyecto_ubicacion, class: 'form-control', placeholder:"Distrito o direccion" %>
 
-<div class="col-md-6 col-md-offset-3" style="margin: 1px 0px 0px 50px;">
+<div class="col-md-6 col-md-offset-3" style="margin: 1px 0px 0px -10px;">
   <%= form.label :precio %>
-  <%= form.number_field :precio, id: :proyecto_precio, class: 'form-control' %>
+  <%= form.number_field :precio, id: :proyecto_precio, class: 'form-control', placeholder:"Precio aprox. por departamento" %>
 </div>
 
-<div class="col-md-6 col-md-offset-3" style="margin: 1px 0px 0px 50px;">
+<div class="col-md-6 col-md-offset-3" style="margin: 1px 0px 0px -10px;">
   <%= form.label :Imagen %>
   <%= form.select :foto_file_name, options_for_select(@months.each_with_index.map { |m, i| [m, m] }), class: 'form-control' %>
 </div>

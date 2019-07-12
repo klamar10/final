@@ -4,14 +4,8 @@
   <tbody style="text-align: center;">
     <% @depart.each do |depart| %>
       <tr>
-        <td><%= depart.piso %></td>
-        <td><%= depart.numero %></td>
-        <td><%= depart.estado %></td>
-        <td><%= depart.area %></td>
-        <td><%= depart.tipo %></td>
-        <td><%= depart.precio %></td>
-        <td><%= depart.proyecto %></td>
-     
+
+<td><%= link_to 'Edit', edit_user_path(depart) %></td>
       </tr>
     <% end %>
   </tbody>

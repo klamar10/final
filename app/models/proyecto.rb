@@ -6,7 +6,7 @@ class Proyecto < ApplicationRecord
 	validates :areacomun, presence: true
 	validates :ubicacion, presence: true
 	validates :precio, presence: true
-	validates :foto_file_name, presence: true
+	validates :foto_file_name, presence: false
 
 	
 end

@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  resources :pruebas
-  devise_for :users
-  resources :cotizacions
-  resources :users
-  get 'sessions/new'
+  get 'search/create'
 
-root to: 'home#inicio'
+  get 'home/inicio'
+  resources :users
+  resources :pruebas
+  resources :cotizacions
   resources :departamentos
   resources :proyectos
-
+  
+  root to: 'sessions#new'
   get 'extra/cotizacion'
   get 'extra/detalle'
 
@@ -19,7 +19,7 @@ root to: 'home#inicio'
   get 'departamentos/prueba'
   get 'home/inicio'
 
-get    'signup'  => 'users#new'
+  get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'

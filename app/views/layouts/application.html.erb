@@ -6,6 +6,8 @@
     <%= csrf_meta_tags %>
 
 
+    <%= stylesheet_link_tag    "application", media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track': 'reload' %>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -19,30 +21,115 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+
+
   </head>
 
   <body>
-    <header>
 
-      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <ul class="navbar-nav">
-          <li class="nav-item nav-link">
-            <a class="nav-link"> <%= link_to "inicio", root_path%></a>
-          </li>
-          <%= link_to "Proyectos", controller: "extra", action: "cotizacion"%>
-          <%= link_to "Crear cuenta", new_user_registration_path, :class => 'navbar-link'  %> |
-          <%= link_to "Iniciar sesion", new_user_session_path, :class => ''  %>
-          </li>
-        </ul>
-      </nav>
-      
+    <header>
+<% if logged_in? and current_user.perfil=="Administrador" %>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+      <%= link_to "Constructora JyJ", {:controller => "home", action: "inicio" },:class => "nav-link"%>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <%= link_to "Nosotros", { :controller => "menu", :action => "nosotros" }, :class => "nav-link" %>
+      </li>
+      <li class="nav-item">
+          <%= link_to "Servicios", { :controller => "menu", :action => "servicio" }, :class => "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Proyectos", { :controller => "extra", :action => "cotizacion" }, :class => "nav-link" %>
+        </li>
+  <!--mantenimientos  -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Mantenimiento
+      </a>
+       <div class="dropdown-menu">
+        <%= link_to "Proyectos", { :controller => "proyectos" }, :class => "dropdown-item"%>
+        <%= link_to "Departamentos", { :controller => "departamentos" }, :class => "dropdown-item"%>
+        <%= link_to "Citas", { :controller => "cotizacions" }, :class => "dropdown-item"%>
+        </div>
+      </li>
+  <!--datos del usuario  -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Mi perfil
+      </a>
+       <div class="dropdown-menu">
+        <%= link_to "Datos Personales", { :controller => "datos", :action => "personales" }, :class => "dropdown-item"%>
+        </div>
+      </li>
+      <div style=" margin: 0px 0px 0px 500px;">
+         <li class="nav-item"><a style="color:#ffffff"><span class="nav-link">USUARIO: <%= current_user.nombre %></span></a></li></div>
+        <li class="nav-item">
+          <%= link_to logout_path, method: :delete do %>
+          <span class='nav-link'> Salir</span>
+    </ul>
+  </nav>
+<% end %>
+
+<% elsif logged_in?  and current_user.perfil !="Administrador"%>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+<%= link_to "Constructora JyJ", {:controller => "home", action: "inicio" }, :class => "nav-link"%>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <%= link_to "Nosotros", { :controller => "menu", :action => "nosotros" }, :class => "nav-link" %>
+      </li>
+      <li class="nav-item">
+          <%= link_to "Servicios", { :controller => "menu", :action => "servicio" }, :class => "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Proyectos", { :controller => "extra", :action => "cotizacion" }, :class => "nav-link" %>
+        </li>
+        <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Mi perfil
+      </a>
+       <div class="dropdown-menu">
+        <%= link_to "Datos Personales", { :controller => "datos", :action => "personales" }, :class => "dropdown-item"%>
+        </div>
+      </li>
+       <div style=" margin: 0px 0px 0px 500px;">
+         <li class="nav-item"><a style="color:#ffffff"><span class="nav-link">USUARIO: <%= current_user.nombre %></span></a></li></div>
+    <li class="nav-item">
+          <%= link_to logout_path, method: :delete do %>
+          <span class='nav-link'> Salir</span></li>
+
+</nav>
+<% end %>
+
+
+
+
+ <% else %>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+      <h5 style="color: white;">Debes inciar sesion</h5>
+    </ul>
+  
+<% end %>
+</ul></nav>
+
+       <body style="background-color:#F2F4F4"><br>
     </header>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <!--  <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>-->
 
-    <div class="content">
+   <div class="container">
+    <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
       <%= yield %>
+
     </div>
   </body>
 

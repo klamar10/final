@@ -1,6 +1,6 @@
 class DatosController < ApplicationController
   def personales
-  	@depart =Departamento.all
+  	@depart =User.all
   end
 
 end
