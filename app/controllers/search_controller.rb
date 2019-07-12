@@ -1,11 +1,12 @@
 class SearchController < ApplicationController
   def create
-  	palabra = params[:keyword]
-  	@products = Departamento.where("tipo like ?", palabra)
- 	respond_to do |format|
- 		format.html { redirect_to root_path}
- 		format.json { render json: @products}
- 		format.js
-  end
-end
+  @q = params[:q]
+  if 
+@q
+    
+@posts = Departamento.where(:tipo like @q)
+  else
+    
+@posts = Departamento.all
+
 end
