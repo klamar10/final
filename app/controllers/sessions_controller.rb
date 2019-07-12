@@ -9,7 +9,7 @@ def create
       log_in user
       redirect_to :root
     else
-      flash[:danger] = 'Invalida la combinacion email/password'
+      flash[:danger] = 'Correo o contraseña invalidos'
       render 'new'
     end
   end

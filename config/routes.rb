@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'search/create'
+
   root to: 'home#inicio'
   resources :users
   resources :pruebas

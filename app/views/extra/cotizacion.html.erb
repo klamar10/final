@@ -1,8 +1,9 @@
-<table class="table" style="text-align: center;">
+<table class="table table-striped" style="text-align: center;">
   <thead>
     <tr>
       <th>Nombre</th>
-      <th>Opciones</th>
+      <th>Precio</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -10,10 +11,10 @@
   <tbody>
     <% @coti.each do |coti| %>
       <tr>
-        <td><%= coti.nombre %> | <%= coti.precio %> </td>
-        <td><%= link_to "Detalles", controller: "extra", action: "detalle"%></td>      
+        <td><%= coti.nombre %> </td> <td><%= coti.precio %></td> 
 
-
-      </tr><% end %>
+       
+<% end %>
     </tbody>
   </table>
+ <%= link_to "Detalles", controller: "extra", action: "detalle", class: "btn btn-outline-primary"%>   

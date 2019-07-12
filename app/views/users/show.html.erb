@@ -1,44 +1,32 @@
-<p id="notice"><%= notice %></p>
+<br>
+<table class="table">
+  <thead class="thead-dark" >
+    <tr style="text-align: center;">
+        <td>Nombre</td>
+        <td>Apellido</td>
+        <td>Email</td>
+        <td>Contraseña</td>
+        <td>Celular</td>
+        <td>DNI</td>
+        <td>Direccion</td>
+        <td>Perfil</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="text-align: center;">
+        <td><%= @user.nombre %></td>
+        <td><%= @user.apellido %></td>
+        <td><%= @user.email %></td>
+        <td><%= @user.password %></td>
+        <td><%= @user.celular %></td>
+        <td><%= @user.dni %></td>
+        <td><%= @user.direccion %></td>
+ <td>@user.perfil</td>
+  </tr>
+    </tbody>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @user.nombre %>
-</p>
-
-<p>
-  <strong>Apellido:</strong>
-  <%= @user.apellido %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-
-<p>
-  <strong>Celular:</strong>
-  <%= @user.celular %>
-</p>
-
-<p>
-  <strong>Dni:</strong>
-  <%= @user.dni %>
-</p>
-
-<p>
-  <strong>Direccion:</strong>
-  <%= @user.direccion %>
-</p>
-
-<p>
-  <strong>Perfil:</strong>
-  <%= @user.perfil %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+</table>
+<div style="text-align: center;">
+<%= link_to 'Editar datos', edit_user_path(@user), class: "btn btn-outline-primary"%> |
+<%= link_to 'Iniciar sesion', login_path, class: "btn btn-outline-success" %>
+</div>

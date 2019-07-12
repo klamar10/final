@@ -9,16 +9,24 @@
 }
 </style>
 <div class="contenedor">
-		<br>
-		<img src="assets/inicio1" width="600px" height="530px" style="margin: 10px 0px 0px 20px">
-	<body style="background-color:#011f4b">
+		<div style="margin: 50px 0px 0px 0px">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/jUbEUNcJYWQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+	<body style="background-color:#000000">
 
 </body>
-<form>
-  <div class="boton">
- <input name="q" class="form-control"<%= @q %> >
- <br>
- <button type="submit" class=" btn btn-outline-danger" style="margin: 0px 0px 0px 60px">Buscar</button>
-</form>
+<div id="resultados"> 
+
+</div>
+<%= form_tag "/search/create", method: :get, remote: true, id: "search-form" do%>
+<%= text_field_tag :keyword, nil, placeholder: "Que estas buscando"%>
+
+
+
+<button type="submit" class=" btn btn-outline-danger" 
+style="margin: 0px 0px 0px 60px">Buscar</button>
+<% end %>
+
+
+
 </div>
 </div>

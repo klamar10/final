@@ -12,43 +12,43 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :nombre %>
-    <%= form.text_field :nombre, id: :user_nombre %>
+    <%= form.label "Nombre" %>
+    <%= form.text_field :nombre, id: :user_nombre, class: "form-control", placeholder:"Nombres"%>
   </div>
 
   <div class="field">
     <%= form.label :apellido %>
-    <%= form.text_field :apellido, id: :user_apellido %>
+    <%= form.text_field :apellido, id: :user_apellido, class: "form-control", placeholder:"Apellidos" %>
   </div>
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_area :email, id: :user_email %>
+    <%= form.text_field :email, id: :user_email, class: "form-control", placeholder:"Correo electronico" %>
   </div>
 
   <div class="field">
     <%= form.label :password %>
-    <%= form.text_area :password, id: :user_password %>
+    <%= form.text_field :password, id: :user_password, class: "form-control", placeholder: "Contraseña" %>
   </div>
 
   <div class="field">
     <%= form.label :celular %>
-    <%= form.number_field :celular, id: :user_celular %>
+    <%= form.number_field :celular, id: :user_celular, class: "form-control", placeholder:"Celular o telefono fijo" %>
   </div>
 
   <div class="field">
     <%= form.label :dni %>
-    <%= form.number_field :dni, id: :user_dni %>
+    <%= form.number_field :dni, id: :user_dni, class: "form-control", placeholder:"Documento de identidad" %>
   </div>
 
   <div class="field">
     <%= form.label :direccion %>
-    <%= form.text_area :direccion, id: :user_direccion %>
+    <%= form.text_area :direccion, id: :user_direccion, class: "form-control", placeholder:"Direccion o distrito" %>
   </div>
 
   <div class="field">
     <%= form.label :perfil %>
-    <%= form.text_field :perfil, id: :user_perfil %>
+    <%= form.text_field :perfil, id: :user_perfil, class: "form-control", placeholder:"Perfil" %>
   </div>
 
   <div class="actions">

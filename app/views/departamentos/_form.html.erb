@@ -12,37 +12,37 @@
   <div class="col-md-6 col-md-offset-1" style="margin: 1px 0px 2px 50px;">
   <div class="field">
     <%= form.label "Numero de piso" %>
-    <%= form.number_field :piso, id: :departamento_piso, class: "form-control" %>
+    <%= form.number_field :piso, id: :departamento_piso, class: "form-control", placeholder:"Numero de piso" %>
   </div>
 
   <div class="field">
     <%= form.label "Numero de puerta" %>
-    <%= form.text_area :numero, id: :departamento_numero, class: "form-control"  %>
+    <%= form.text_field :numero, id: :departamento_numero, class: "form-control", placeholder:"Numero de puerta"  %>
   </div>
 
   <div class="field">
     <%= form.label :estado %>
-    <%= form.text_field :estado, id: :departamento_estado, class: "form-control"  %>
+    <%= form.text_field :estado, id: :departamento_estado, class: "form-control", placeholder:"Estado"  %>
   </div>
 
   <div class="field">
-    <%= form.label :area %>
-    <%= form.text_area :area, id: :departamento_area, class: "form-control"  %>
+    <%= form.label "Area en m2" %>
+    <%= form.text_field :area, id: :departamento_area, class: "form-control", placeholder:"Area en metros"  %>
   </div>
 
   <div class="field">
     <%= form.label :tipo %>
-    <%= form.text_field :tipo, id: :departamento_tipo, class: "form-control"  %>
+    <%= form.text_field :tipo, id: :departamento_tipo, class: "form-control", placeholder:"Tipo Flat o Duplex" %>
   </div>
 
   <div class="field">
     <%= form.label :precio %>
-    <%= form.number_field :precio, id: :departamento_precio, class: "form-control"  %>
+    <%= form.number_field :precio, id: :departamento_precio, class: "form-control", placeholder:"Precio de venta"  %>
   </div>
 
   <div class="field">
     <%= form.label "Identificador de proyecto" %>
-    <%= form.text_field :proyecto_id, id: :departamento_proyecto_id, class: "form-control"  %>
+    <%= form.text_field :proyecto_id, id: :departamento_proyecto_id, class: "form-control", placeholder:"Proyecto asociado"  %>
   </div>
   <br>
   <div class="actions">
