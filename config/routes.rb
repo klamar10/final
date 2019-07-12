@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
-  resources :pruebas
-  devise_for :users
-  resources :cotizacions
+  root to: 'home#inicio'
   resources :users
-  get 'sessions/new'
-
-root to: 'home#inicio'
+  resources :pruebas
+  resources :cotizacions
   resources :departamentos
   resources :proyectos
-
+  
+  get 'sessions/new'
   get 'extra/cotizacion'
   get 'extra/detalle'
 
@@ -19,10 +17,10 @@ root to: 'home#inicio'
   get 'departamentos/prueba'
   get 'home/inicio'
 
-get    'signup'  => 'users#new'
+  get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
+  get 'logout'  => 'sessions#destroy'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

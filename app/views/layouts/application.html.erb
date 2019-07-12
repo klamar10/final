@@ -5,8 +5,8 @@
     <title>Constructora</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    "default", media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag "default", 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    "application", media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track': 'reload' %>
     
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -29,12 +29,22 @@
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <ul class="navbar-nav">
           <li class="nav-item nav-link">
-            <a class="nav-link"> <%= link_to "inicio", root_path%></a>
-          </li>
-          <%= link_to "Proyectos", controller: "extra", action: "cotizacion"%>
-          <%= link_to "Crear cuenta", new_user_registration_path, :class => 'navbar-link'  %> |
-          <%= link_to "Iniciar sesion", new_user_session_path, :class => ''  %>
-          </li>
+            <a class="nav-link"> <%= link_to "inicio", root_path%></a></li>
+            
+
+              <% if logged_in? %>
+                <li><a><span class="glyphicon glyphicon-user"> <%= current_user.email %></span></a></li>
+                  <li>
+                     <%= link_to logout_path, method: :delete do %>
+                       <span class='glyphicon glyphicon-log-in'> Salir</span>
+               <% end %>
+            
+                </li>
+            <% else %>
+              <li><a href="<%= login_path %>"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
+            <% end %>
+
+                
         </ul>
       </nav>
       

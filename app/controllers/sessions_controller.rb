@@ -4,7 +4,7 @@ def new
   end
 
 def create
-    user = User.find_by(login: params[:session][:email].downcase, password: params[:session][:password])
+    user = User.find_by(email: params[:session][:email].downcase, password: params[:session][:password])
     if user
       log_in user
       redirect_to :root
@@ -15,8 +15,10 @@ def create
   end
 
 
+
+
   def destroy
-  	log_out if logged_in?
+    log_out if logged_in?
     redirect_to :root
   end
 
